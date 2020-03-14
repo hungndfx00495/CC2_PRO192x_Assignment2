@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  *
- * @author fx00495
+ * @author fx00495_
  */
 public class Bee {
     private String type;

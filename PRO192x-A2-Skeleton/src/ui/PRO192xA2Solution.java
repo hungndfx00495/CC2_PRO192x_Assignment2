@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author fx00495
+ * @author fx00495_
  */
 public class PRO192xA2Solution {
 

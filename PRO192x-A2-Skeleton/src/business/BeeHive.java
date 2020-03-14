@@ -14,7 +14,7 @@ import java.util.Random;
 
 /**
  *
- * @author fx00495
+ * @author fx00495_
  */
 public class BeeHive {
     private ArrayList<Bee> listBee;
@@ -60,9 +60,8 @@ public class BeeHive {
         return listBee;
     }
 
-    // attach all bees
+    // Attach all bees
     public void attackBees() {
-        // your code
         for (int i = 0; i < listBee.size(); i++) {
             this.listBee.get(i).damage();
         }

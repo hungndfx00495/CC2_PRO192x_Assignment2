@@ -7,7 +7,7 @@ package entity;
 
 /**
  *
- * @author fx00495
+ * @author fx00495_
  */
 public class QueenBee extends Bee {
     // Initialize Queen bee
