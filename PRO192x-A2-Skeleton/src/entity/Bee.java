@@ -71,9 +71,13 @@ public class Bee {
     @Override
     public String toString() {
         // your code
-        String deadOrAlive = "dead";
-        if (this.isAlive())
+        String deadOrAlive;
+        if (this.isAlive()) {
             deadOrAlive = "alive";
+        } else {
+            deadOrAlive = "dead";
+        }
         return this.getType() + "\t" + this.getHealth() + "\t" + deadOrAlive;
+
     }
 }

@@ -28,7 +28,7 @@ public class PRO192xA2Solution {
         Scanner s = new Scanner(System.in);
         int choice;
         while (keepRunning) {
-            // menu
+            // Show menu
             System.out.println("--------------Bee hive--------------");
             System.out.println("\t1 - Create bee list");
             System.out.println("\t2 - Attack bees");
@@ -83,7 +83,7 @@ public class PRO192xA2Solution {
         }
         if (count == 0) {
             System.out.println(" ");
-            System.err.println("\tALL BEES ARE DEAD!");
+            System.err.println("\tAll bees are dead!");
             System.out.println(" ");
         }
     }
