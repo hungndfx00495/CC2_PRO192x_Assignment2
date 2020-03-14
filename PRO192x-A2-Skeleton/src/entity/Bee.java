@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  *
- * @author hp
+ * @author fx00495
  */
 public class Bee {
     private String type;
@@ -18,8 +18,7 @@ public class Bee {
     private byte deadHealth; // set dead health
 
     public Bee() {
-        // init
-        // your cote
+        // Initialize health for bee
         this.setHealth((byte) 100);
         alive = true;
     }
@@ -37,12 +36,14 @@ public class Bee {
     }
 
     public void setHealth(byte health) {
-        if (health <= 0)
+        if (health <= 0) {
             health = 0;
+        }
         this.health = health;
-        // update the alive status when the health value changed
-        if (health < deadHealth)
+        // Update alive status when the health value is changed
+        if (health < deadHealth) {
             alive = false;
+        }
     }
 
     public byte getDeadHealth() {
@@ -57,9 +58,9 @@ public class Bee {
         return this.alive;
     }
 
-    // attack this bee
+    // Attack the bee
     public void damage() {
-        // your code
+        // Attacking alive bee
         if (this.isAlive()) {
             byte damage = (byte) new Random().nextInt(101);
             this.health -= damage;
@@ -69,12 +70,10 @@ public class Bee {
 
     @Override
     public String toString() {
-
         // your code
         String deadOrAlive = "dead";
         if (this.isAlive())
             deadOrAlive = "alive";
         return this.getType() + "\t" + this.getHealth() + "\t" + deadOrAlive;
-
     }
 }

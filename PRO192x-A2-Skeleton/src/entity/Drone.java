@@ -7,10 +7,11 @@ package entity;
 
 /**
  *
- * @author hp
+ * @author fx00495
  */
-// male bee
+
 public class Drone extends Bee {
+    // Initialize Drone
     public Drone() {
         super();// call base class (Bee) constructor
         this.setType("Drone");

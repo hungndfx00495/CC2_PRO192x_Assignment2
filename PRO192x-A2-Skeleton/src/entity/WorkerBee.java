@@ -5,14 +5,12 @@
  */
 package entity;
 
-import java.util.Random;
-
 /**
  *
- * @author hp
+ * @author fx00495
  */
 public class WorkerBee extends Bee {
-    // your code
+    // Initialize worker bee
     public WorkerBee() {
         super();// call base class (Bee) constructor
         this.setType("Worker");

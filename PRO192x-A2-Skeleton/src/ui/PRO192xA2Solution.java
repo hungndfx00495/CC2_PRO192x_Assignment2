@@ -8,12 +8,11 @@ package ui;
 import business.BeeHive;
 import entity.Bee;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
  *
- * @author hp
+ * @author fx00495
  */
 public class PRO192xA2Solution {
 
@@ -25,6 +24,7 @@ public class PRO192xA2Solution {
         // TODO code application logic here
         BeeHive bh = null;
         boolean keepRunning = true;
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         int choice;
         while (keepRunning) {
@@ -37,6 +37,7 @@ public class PRO192xA2Solution {
             try {
                 s.hasNextInt();
                 choice = s.nextInt();
+                System.out.println("------------------------------------");
                 ArrayList<Bee> bees;
                 switch (choice) {
                 case 1:
@@ -64,17 +65,21 @@ public class PRO192xA2Solution {
                 System.err.println("Input is invalidate! Try again!");
                 s.nextLine();
             }
-
         }
     }
 
+    // Print to console the list of all bees
     public static void showBees(ArrayList<Bee> bees) {
-        // your code
         int count = 0; // Count bees alive
         for (int i = 0; i < bees.size(); i++) {
-            System.out.println((i + 1) + ")  " + bees.get(i).toString());
-            if (bees.get(i).isAlive())
+            if (i < bees.size() - 1) {
+                System.out.println((i + 1) + ")  " + bees.get(i).toString());
+            } else {
+                System.out.println((i + 1) + ") " + bees.get(i).toString());
+            }
+            if (bees.get(i).isAlive()) {
                 count++;
+            }
         }
         if (count == 0) {
             System.out.println(" ");

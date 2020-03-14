@@ -14,34 +14,40 @@ import java.util.Random;
 
 /**
  *
- * @author hp
+ * @author fx00495
  */
 public class BeeHive {
     private ArrayList<Bee> listBee;
 
     public void init() {
-        // create list of 10 bees of Queen, Drone and Worker types
-        // in each bee, type and health attributes are randomly chosen
+        // Create list of 10 bees with 3 types such as Queen bee, Worker bee and
+        // Drone, it gives 100 health for each bee
         this.listBee = new ArrayList<>();
         Random rd = new Random();
         byte countQueen = 0;
         byte countBee = 0;
-        // your code
+        // Add bees in the hive
         while (countBee < 10) {
-            int randomBee = rd.nextInt(3); // Random from 0 to 2;
+            // Random 3 types of bee
+            int randomBee = rd.nextInt(3);
             switch (randomBee) {
             case 0:
-                if (countQueen == 1)
-                    break; // Queen have one, don't add, break;
-                listBee.add(new QueenBee());
-                countQueen++;
-                countBee++;
-                break;
+                // If queen is created, just skip it.
+                if (countQueen == 1) {
+                    break;
+                } else {
+                    listBee.add(new QueenBee());
+                    countQueen++;
+                    countBee++;
+                    break;
+                }
             case 1:
+                // Add drone into the hive
                 listBee.add(new Drone());
                 countBee++;
                 break;
             case 2:
+                // Add worker bee into the hive
                 listBee.add(new WorkerBee());
                 countBee++;
                 break;
@@ -49,6 +55,7 @@ public class BeeHive {
         }
     }
 
+    // Get all bees in the hive
     public ArrayList<Bee> getAllBees() {
         return listBee;
     }
@@ -59,6 +66,5 @@ public class BeeHive {
         for (int i = 0; i < listBee.size(); i++) {
             this.listBee.get(i).damage();
         }
-
     }
 }
