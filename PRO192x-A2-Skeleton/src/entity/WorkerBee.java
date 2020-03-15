@@ -7,7 +7,7 @@ package entity;
 
 /**
  *
- * @author fx00495_
+ * @author fx00495
  */
 public class WorkerBee extends Bee {
     // Initialize worker bee

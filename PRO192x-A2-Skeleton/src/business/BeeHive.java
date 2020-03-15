@@ -14,7 +14,7 @@ import java.util.Random;
 
 /**
  *
- * @author fx00495_
+ * @author fx00495
  */
 public class BeeHive {
     private ArrayList<Bee> listBee;
