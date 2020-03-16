@@ -9,11 +9,12 @@ package entity;
  *
  * @author fx00495
  */
+
 public class WorkerBee extends Bee {
     // Initialize worker bee
     public WorkerBee() {
         super();// call base class (Bee) constructor
         this.setType("Worker");
-        this.setDeadHealth((byte) 70);
+        this.setDieValue((byte) 70);
     }
 }

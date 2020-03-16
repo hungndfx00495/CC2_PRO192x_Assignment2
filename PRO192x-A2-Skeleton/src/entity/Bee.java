@@ -11,11 +11,12 @@ import java.util.Random;
  *
  * @author fx00495
  */
+
 public class Bee {
     private String type;
     private byte health;
     private boolean alive;
-    private byte deadHealth; // set dead health
+    private byte dieValue;
 
     public Bee() {
         // Initialize health for bee
@@ -36,22 +37,25 @@ public class Bee {
     }
 
     public void setHealth(byte health) {
-        if (health <= 0) {
+
+        // If the health of bee < 0, set it 0
+        if (health < 0) {
             health = 0;
         }
         this.health = health;
+
         // Update alive status when the health value is changed
-        if (health < deadHealth) {
+        if (health < dieValue) {
             alive = false;
         }
     }
 
-    public byte getDeadHealth() {
-        return deadHealth;
+    public byte getDieValue() {
+        return dieValue;
     }
 
-    public void setDeadHealth(byte deadHealth) {
-        this.deadHealth = deadHealth;
+    public void setDieValue(byte dieValue) {
+        this.dieValue = dieValue;
     }
 
     public boolean isAlive() {
@@ -70,7 +74,6 @@ public class Bee {
 
     @Override
     public String toString() {
-        // your code
         String deadOrAlive;
         if (this.isAlive()) {
             deadOrAlive = "alive";
@@ -78,6 +81,5 @@ public class Bee {
             deadOrAlive = "dead";
         }
         return this.getType() + "\t" + this.getHealth() + "\t" + deadOrAlive;
-
     }
 }

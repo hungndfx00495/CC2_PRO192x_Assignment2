@@ -13,9 +13,8 @@ package entity;
 public class Drone extends Bee {
     // Initialize Drone
     public Drone() {
-        super();// call base class (Bee) constructor
+        super();// Call base class (Bee) constructor
         this.setType("Drone");
-        this.setDeadHealth((byte) 50);
+        this.setDieValue((byte) 50);
     }
-
 }

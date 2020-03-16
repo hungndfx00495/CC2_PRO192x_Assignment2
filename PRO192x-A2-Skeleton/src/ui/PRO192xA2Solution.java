@@ -16,12 +16,7 @@ import java.util.Scanner;
  */
 public class PRO192xA2Solution {
 
-    /**
-     * @param args
-     *            the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
         BeeHive bh = null;
         boolean keepRunning = true;
         @SuppressWarnings("resource")
@@ -42,7 +37,7 @@ public class PRO192xA2Solution {
                 switch (choice) {
                 case 1:
                     bh = new BeeHive();
-                    bh.init();// create 10 bees
+                    bh.init();// Create 10 bees
                     bees = bh.getAllBees();
                     System.out.println("Bees details at the beginning:");
                     showBees(bees);
@@ -51,7 +46,7 @@ public class PRO192xA2Solution {
                     if (bh == null) {
                         System.out.println("No bee!");
                     } else {
-                        bh.attackBees();// attach bees
+                        bh.attackBees();// Attach bees
                         bees = bh.getAllBees();
                         System.out.println("Bees details at the moment:");
                         showBees(bees);
@@ -62,13 +57,18 @@ public class PRO192xA2Solution {
                     break;
                 }
             } catch (Exception e) {
-                System.err.println("Input is invalidate! Try again!");
+                System.err.println(
+                        "Input wrong, please input number 1 or 2 or 3!");
                 s.nextLine();
             }
         }
     }
 
-    // Print to console the list of all bees
+    /**
+     * Print to console the list of all bees
+     * 
+     * @param bees
+     */
     public static void showBees(ArrayList<Bee> bees) {
         int count = 0; // Count bees alive
         for (int i = 0; i < bees.size(); i++) {
@@ -81,10 +81,10 @@ public class PRO192xA2Solution {
                 count++;
             }
         }
+
+        // If all bees are death, print All bees are dead!
         if (count == 0) {
-            System.out.println(" ");
-            System.err.println("\tAll bees are dead!");
-            System.out.println(" ");
+            System.err.println("\n\tAll bees are dead!\n");
         }
     }
 }

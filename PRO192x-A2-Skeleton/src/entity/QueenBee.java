@@ -9,11 +9,12 @@ package entity;
  *
  * @author fx00495
  */
+
 public class QueenBee extends Bee {
     // Initialize Queen bee
     public QueenBee() {
         super();// Call base class (Bee) constructor
         this.setType("Queen");
-        this.setDeadHealth((byte) 20);
+        this.setDieValue((byte) 20);
     }
 }

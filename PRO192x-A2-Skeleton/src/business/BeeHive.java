@@ -16,23 +16,26 @@ import java.util.Random;
  *
  * @author fx00495
  */
+
 public class BeeHive {
     private ArrayList<Bee> listBee;
 
+    /**
+     * Create list of 10 bees with 3 types such as Queen bee, Worker bee and
+     * Drone, it gives 100 health for each bee
+     */
     public void init() {
-        // Create list of 10 bees with 3 types such as Queen bee, Worker bee and
-        // Drone, it gives 100 health for each bee
         this.listBee = new ArrayList<>();
         Random rd = new Random();
         byte countQueen = 0;
         byte countBee = 0;
-        // Add bees in the hive
+        // Add bees into the hive
         while (countBee < 10) {
             // Random 3 types of bee
             int randomBee = rd.nextInt(3);
             switch (randomBee) {
             case 0:
-                // If queen is created, just skip it.
+                // There is 1 queen in the hive. If the queen is created, just skip it.
                 if (countQueen == 1) {
                     break;
                 } else {
